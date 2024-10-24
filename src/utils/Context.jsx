@@ -9,20 +9,20 @@ export const ProductContext  = createContext();
         JSON.parse(localStorage.getItem("products")) || null
     );
 
-    // const getproducts = async ()=>{
-    // try{
-    //     const {data} = await axios("/products");
-    //     setProducts(data);
-    // }
-    // catch(err){
-    //     console.log(err);
-    // }
-    // };
+    const getproducts = async ()=>{
+    try{
+        const {data} = await axios("/products");
+        setProducts(data);
+    }
+    catch(err){
+        console.log(err);
+    }
+    };
 
-    // useEffect(()=>{
-    // getproducts();
+    useEffect(()=>{
+    getproducts();
   
-    // },[])
+    },[])
 
     console.log(products);
     
